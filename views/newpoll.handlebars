@@ -1,0 +1,55 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h3>New Poll</h3>
+    <div class="row">
+        <form method="post" action="/users/newpoll" class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="pollname" type="text" class="validate" name="pollname">
+              <label for="pollname">Name</label>
+            </div>
+          </div>
+          <h5>Options</h5>
+          <div id="optiondiv">
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" class="validate" name="options">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" class="validate" name="options">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" class="validate" name="options">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s9">
+              <button class="btn waves-effect waves-light light-blue lighten-1" type="button" onclick="addOption()">
+                <i class="material-icons">add</i>
+              </button>
+            </div>
+            <div class="col s3">
+              <button class="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    <br><br>
+
+  </div>
+</div>
+<script>
+function addOption() {
+  var newElement = document.createElement('div');
+  newElement.innerHTML = '<div class="row"><div class="input-field col s12"><input type="text" class="validate" name="options"></div></div>';
+  document.getElementById('optiondiv').appendChild(newElement);
+}
+</script>

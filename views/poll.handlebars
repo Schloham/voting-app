@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="center-align">
+    <h2>{{data.pollname}}</h2>
+    <p>by {{data.username}}</p>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <form method="post" action="/users/poll/vote" class="col m9 s12">
+      <div class="row">
+        <div class="input-field col m6 s9">
+          <select class="browser-default" name="selectPicker">
+            <option value="selOpt" disabled selected>Choose your option</option>
+            {{{ selectOptions data.options }}}
+          </select>
+        </div>
+        {{{ pollid data }}}
+        <button id="selectButton" class="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action">Vote</button>
+      </div>
+    </form>
+    <div class="col m3 s12 center-align">
+      {{{twitter data}}}
+    </div>
+  </div>
+  {{{equal user.username data.username data}}}
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+<script src="/javascripts/showchart.js"></script>

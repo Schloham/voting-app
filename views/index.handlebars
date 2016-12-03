@@ -1,0 +1,20 @@
+  <div class="container">
+    <div class="row">
+      <div class="center-align col s12">
+        <h2>Polls</h2>
+        {{#if user}}
+          <div class="right-align">
+            <a href="/users/newpoll">New Poll</a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l12 s12">
+        <ul class="collection">
+        {{#each polls as |val|}}
+          <li class="collection-item">{{{link val}}}</li>
+        {{/each}}
+      </div>
+    </div>
+  </div>

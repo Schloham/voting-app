@@ -1,0 +1,39 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h3>{{data.name}}</h3>
+    <div class="row">
+      {{{formpollid data._id}}}
+        <div class="row">
+          <div class="input-field col s12">
+            {{{formpollname data.pollname}}}
+            <label for="pollname">Name</label>
+          </div>
+        </div>
+        <h5>Options</h5>
+        <div id="optiondiv">
+          {{{formoptions data.options}}}
+          {{{formoptionscount data.optionsCount}}}
+        </div>
+        <div class="row">
+          <div class="col s9">
+            <button class="btn waves-effect waves-light light-blue lighten-1" type="button" onclick="addOption()">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+          <div class="col s3">
+            <button class="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br><br>
+  </div>
+</div>
+<script>
+function addOption() {
+  var newElement = document.createElement('div');
+  newElement.innerHTML = '<div class="row"><div class="input-field col s12"><input type="text" class="validate" name="options"></div></div><input type="hidden" class="validate" name="optionsCount" value=\"0\">';
+  document.getElementById('optiondiv').appendChild(newElement);
+}
+</script>
